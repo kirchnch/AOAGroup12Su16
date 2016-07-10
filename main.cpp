@@ -65,11 +65,13 @@ void run_algorithm (int algorithm) {
         //processing the arrays
         //***TODO: adding cases for algorithms 3 and 4****
         struct MSS_result result;
-        if (algorithm == 1)
-            result = MaxSubarray_enum (inputArray, intCount);
-        else if (algorithm == 2)
-            result = MaxSubarray_better_enum (inputArray, intCount);
-        
+        if (algorithm == 1) {
+            result = MaxSubarray_enum(inputArray, intCount);}
+        else if (algorithm == 2){
+            result = MaxSubarray_better_enum(inputArray, intCount);}
+        else if (algorithm == 3){ 
+            result = MaxSubarray_divideconquer(inputArray, intCount);}
+      
         //writing result to the output file
         outputFile << "[";
         for (int i = result.leftEnd; i <= result.rightEnd; i++) {
@@ -90,6 +92,6 @@ void run_algorithm (int algorithm) {
 int main(int argc, const char * argv[]) {
     run_algorithm(1);
     run_algorithm(2);
-    
+    run_algorithm(3); 
     return 0;
 }
